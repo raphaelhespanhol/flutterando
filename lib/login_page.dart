@@ -67,7 +67,7 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.blue,
                 textColor: Colors.black,
                 onPressed: () {
-                  if (email == 'raphael@gmail.com' && password == '123') {
+                  if (email == 'admin' && password == '123') {
                     print("login e senhas corretas");
                     Navigator.of(context).pushReplacementNamed('/home');
                   } else {
