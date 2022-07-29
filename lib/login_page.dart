@@ -28,33 +28,44 @@ class _LoginPageState extends State<LoginPage> {
               Container(
                 height: 10,
               ),
-              TextField(
-                onChanged: (text) {
-                  email = text;
-                },
-                keyboardType: TextInputType.emailAddress,
-                decoration: InputDecoration(
-                  labelText: 'Email',
-                  border: OutlineInputBorder(),
-                ),
-              ),
-              SizedBox(
-                height: 15,
-              ),
-              TextField(
-                onChanged: (text) {
-                  password = text;
-                },
-                obscureText: true,
-                decoration: InputDecoration(
-                  labelText: 'Password',
-                  border: OutlineInputBorder(),
+              Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    children: [
+                      TextField(
+                        onChanged: (text) {
+                          email = text;
+                        },
+                        keyboardType: TextInputType.emailAddress,
+                        decoration: InputDecoration(
+                          labelText: 'Email',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 15,
+                      ),
+                      TextField(
+                        onChanged: (text) {
+                          password = text;
+                        },
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          labelText: 'Password',
+                          border: OutlineInputBorder(),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
                 height: 10,
               ),
               RaisedButton(
+                color: Colors.blue,
+                textColor: Colors.black,
                 onPressed: () {
                   if (email == 'raphael@gmail.com' && password == '123') {
                     print("login e senhas corretas");
@@ -63,7 +74,13 @@ class _LoginPageState extends State<LoginPage> {
                     print("login inválido");
                   }
                 },
-                child: Text('Entrar'),
+                child: Container(
+                  width: double.infinity,
+                  child: Text(
+                    'Entrar',
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               )
             ],
           ),
