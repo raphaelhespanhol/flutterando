@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutterando/app/views/conversor_view.dart';
 import 'package:flutterando/app_controller.dart';
+
 import 'home_page.dart';
 import 'login_page.dart';
 
@@ -18,6 +20,7 @@ class AppWidget extends StatelessWidget {
           routes: {
             '/': ((context) => LoginPage()),
             '/home': ((context) => HomePage()),
+            '/conversor': ((context) => ConversorView()),
           },
         );
       },

@@ -34,6 +34,15 @@ class HomePageState extends State<HomePage> {
               },
             ),
             ListTile(
+              leading: Icon(Icons.calculate),
+              title: Text('Conversor'),
+              subtitle: Text('Valores por moedas'),
+              onTap: () {
+                print('chamando a view');
+                Navigator.of(context).pushReplacementNamed('/conversor');
+              },
+            ),
+            ListTile(
               leading: Icon(Icons.exit_to_app),
               title: Text('Logout'),
               subtitle: Text('Finalizar sessão'),
