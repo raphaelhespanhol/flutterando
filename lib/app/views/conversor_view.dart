@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../components/currency_box.dart';
+
 class ConversorView extends StatelessWidget {
   const ConversorView({Key? key}) : super(key: key);
 
@@ -11,7 +13,8 @@ class ConversorView extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         child: Padding(
-          padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
+          padding:
+              const EdgeInsets.only(top: 100, left: 30, right: 30, bottom: 20),
           child: Column(
             children: [
               ClipRRect(
@@ -23,43 +26,13 @@ class ConversorView extends StatelessWidget {
                 ),
               ),
               SizedBox(
-                width: MediaQuery.of(context).size.width,
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Expanded(
-                      child: SizedBox(
-                        height: 56,
-                        child: DropdownButton(
-                          isExpanded: true,
-                          underline: Container(
-                            height: 1,
-                            color: Colors.blue,
-                          ),
-                          items: ['Real', 'Dolar', 'Euro'].map((String value) {
-                            return DropdownMenuItem(
-                              value: value,
-                              child: Text(value),
-                            );
-                          }).toList(),
-                          onChanged: (String? value) {},
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: TextField(
-                        decoration: InputDecoration(
-                            enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(color: Colors.blue))),
-                      ),
-                    ),
-                  ],
-                ),
+                height: 30,
               ),
+              CurrencyBox(),
+              SizedBox(
+                height: 10,
+              ),
+              CurrencyBox(),
               SizedBox(
                 height: 30,
               ),
